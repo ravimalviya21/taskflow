@@ -7,7 +7,7 @@ const Sidebar = () => {
   const { pathname } = useLocation();
 
   return (
-    <>
+    <div className="app-shell">
       <aside className="sidebar">
         <div className="sidebar-brand">
           <Typography variant="headline-md" className="sidebar-logo">
@@ -17,11 +17,11 @@ const Sidebar = () => {
 
         <nav className="sidebar-nav">
           {ROUTE_OPTIONS.map((option) => {
-            const isActive = pathname === option.link;
+            const isActive = pathname === option.path;
             return (
               <Link
-                key={option.link}
-                to={option.link}
+                key={option.path}
+                to={option.path}
                 className={['sidebar-link', isActive ? 'sidebar-link-active' : '']
                   .filter(Boolean)
                   .join(' ')}
@@ -35,7 +35,7 @@ const Sidebar = () => {
       <main className='content'>
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };
 

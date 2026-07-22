@@ -1,0 +1,33 @@
+.task-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.summary-card {
+  background-color: var(--color-surface-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-left-width: 4px;
+}
+
+.summary-card-total {
+  border-left-color: var(--color-primary);
+}
+
+.summary-card-pending {
+  border-left-color: #d99a1c;
+}
+
+.summary-card-in-progress {
+  border-left-color: #3b82f6;
+}
+
+.summary-card-completed {
+  border-left-color: #2f9e57;
+}
+
+@media (max-width: 720px) {
+  .task-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

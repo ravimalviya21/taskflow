@@ -4,12 +4,16 @@ import './index.css';
 
 const Input = ({
   label,
+  type = 'text',
+  name,
+  placeholder,
   value,
   defaultValue,
   onChange,
   error,
   padding,
   margin,
+  ...rest
 }) => {
   const inputId = useId();
 
@@ -27,14 +31,16 @@ const Input = ({
       )}
       <input
         id={inputId}
+        type={type}
+        name={name}
+        placeholder={placeholder}
         className={['input-field', error ? 'input-field-error' : '']
           .filter(Boolean)
           .join(' ')}
         value={value}
         defaultValue={defaultValue}
         onChange={onChange}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={error ? `${inputId}-error` : undefined}
+        {...rest}
       />
       {error && (
         <Typography

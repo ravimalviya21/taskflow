@@ -1,0 +1,48 @@
+.task-card {
+  background-color: var(--color-surface-lowest);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.task-card:hover {
+  box-shadow: 0 8px 24px rgba(25, 28, 30, 0.1);
+  transform: translateY(-2px);
+}
+
+.task-card-title {
+  word-break: break-word;
+}
+
+.task-badge {
+  flex-shrink: 0;
+  padding: 4px 10px;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  border-radius: 999px;
+}
+
+.task-badge-pending {
+  color: #92600a;
+  background-color: #fdf1d6;
+}
+
+.task-badge-in-progress {
+  color: #1b4b91;
+  background-color: #dceafe;
+}
+
+.task-badge-completed {
+  color: #1f6b3b;
+  background-color: #d8f3e0;
+}
+
+.task-card-due {
+  color: var(--color-on-surface-variant);
+}
+
+.task-card-due-overdue {
+  color: var(--color-error);
+  font-weight: 600;
+}
